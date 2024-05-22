@@ -1,0 +1,31 @@
+package com.curso.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curso.model.Curso;
+
+@RestController
+public class CursosController {
+
+	
+	//Get, localhost:8080/infoCliente
+	@GetMapping(value="random", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Curso informacionRandom() {
+		return new Curso("Jaimito", "jaimito@false.com", 34);
+	}
+	
+	
+	//Get, localhost:8080/infoCliente
+		@GetMapping(value="cursos", produces=MediaType.APPLICATION_JSON_VALUE)
+		public Curso cursos() {
+			List<Curso> cursos = new ArrayList<Curso>();
+			Curso c1 = new Curso("Curso1", "Prueba del primer curso", 15);
+			return new Curso("Jaimito", "jaimito@false.com", 34);
+		}
+		
+}

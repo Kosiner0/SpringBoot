@@ -1,0 +1,45 @@
+package com.curso.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curso.model.Libro;
+import com.curso.service.LibrosService;
+
+@RestController
+public class LibrosController {
+
+	@Autowired
+	LibrosService service;
+	
+	public List<Libro> libros(){
+		return service.libros();
+	}
+	
+	
+	public Libro buscarLibro(int isbn) {
+		return service.buscarLibro(isbn);
+	}
+	
+	
+	public void agregar(Libro libro) {
+		service.altaLibro(libro);
+	}
+	
+	
+	public void actualizar(Libro libro) {
+		service.actualizarLibro(libro);
+	}
+	
+	
+	public List<Libro> eliminar(int isbn){
+		return service.eliminarLibro(isbn);
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+spring.application.name=ejercicioCursos
+spring.datasource.url=jdbc:mysql://localhost:3306/cursos_boot
+spring.datasource.username = root
+spring.datasource.password = root
+spring.jpa.hibernate.ddl-auto = update

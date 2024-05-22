@@ -1,0 +1,15 @@
+package com.curso.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.curso.model.Curso;
+
+public class CursoService {
+	
+	public static List<Curso> cursos = new ArrayList<Curso>();
+	Curso c1 = new Curso("Curso1", "Prueba del primer curso", 15);
+	
+	cursos.add(c1);
+
+}

@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=1
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=ejercicioCursos
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.2.5
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.dependencies=web
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Ejercici de clase Curso con Spring Boot
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.curso
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=17
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=ejercicioCursos
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.curso
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

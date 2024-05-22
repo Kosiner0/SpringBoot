@@ -1,0 +1,19 @@
+package com.curso.controller;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curso.model.Curso;
+
+@RestController
+public class CursosController {
+
+	//Get, localhost:8080/infoCliente
+		@GetMapping(value="infoCliente", produces=MediaType.APPLICATION_JSON_VALUE)
+		public Curso informacion() {
+			return new Curso("Jaimito", "jaimito@false.com", 34);
+		}
+		
+		
+}

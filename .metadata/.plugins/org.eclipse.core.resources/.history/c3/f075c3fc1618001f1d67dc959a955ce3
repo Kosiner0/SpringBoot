@@ -1,0 +1,45 @@
+package com.curso.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.curso.model.Libro;
+
+public class LibrosServiceImpl implements LibrosService {
+
+	List<Libro> libros;
+	
+	public LibrosServiceImpl() {
+		libros = new ArrayList<>();
+	}
+	@Override
+	public List<Libro> libros() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Libro buscarLibro(int isbn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void altaLibro(Libro libro) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actualizarLibro(Libro libro) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Libro> eliminarLibro(int isbn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

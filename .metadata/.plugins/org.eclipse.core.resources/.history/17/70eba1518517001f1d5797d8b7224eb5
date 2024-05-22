@@ -1,0 +1,48 @@
+package com.curso.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.curso.model.Curso;
+
+@RestController
+public class CursosController {
+
+	
+	//Get, localhost:8080/infoCliente
+	@GetMapping(value="random", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Curso informacionRandom() {
+		return new Curso("Jaimito", "jaimito@false.com", 34);
+	}
+	
+	
+	//Get, localhost:8080/cursos
+	@GetMapping(value="cursos", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Curso> cursos() {
+		List<Curso> cursos = new ArrayList<Curso>();
+		
+		cursos.add(new Curso("Curso1", "Prueba del primer curso", 13));
+		cursos.add(new Curso("Curso2", "Prueba del segundo curso", 4));
+		cursos.add(new Curso("Curso3", "Prueba del tercer curso", 18));
+		cursos.add(new Curso("Prueba", "Prueba random", 15));
+		cursos.add(new Curso("Spring Boot", "Curso de especializacion en Spring Boot", 9));
+		
+		return cursos;
+	}
+	
+	
+	// Post, localhost:8080/cursos
+    @PostMapping(value = "cursos", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Curso cursos(@RequestBody Curso nuevoCurso) {
+        // Aquí puedes manejar la lógica para guardar el nuevo curso en la base de datos
+        // Por ahora, simplemente devolvemos el mismo curso recibido
+        return nuevoCurso;
+    }
+		
+}
