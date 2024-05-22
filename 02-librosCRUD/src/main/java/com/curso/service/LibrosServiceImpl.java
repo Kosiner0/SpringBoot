@@ -14,12 +14,11 @@ public class LibrosServiceImpl implements LibrosService {
 	
 	public LibrosServiceImpl() {
 		libros = new ArrayList<>();
-		libros.add(new Libro(111, "Grecia", "viajes"));
-		libros.add(new Libro(222, "Crimen en el parque", "novela negra"));
-		libros.add(new Libro(333, "Java21", "programación"));
-		libros.add(new Libro(444, "Verano en Hawai", "poesia"));
-		libros.add(new Libro(555, "Italia", "viajes"));
-		
+		libros.add(new Libro(111,"Grecia","viajes"));
+		libros.add(new Libro(222,"Crimen en el parque","novela negra"));
+		libros.add(new Libro(333,"Java21","programación"));
+		libros.add(new Libro(444,"Verano en Hawai","poesia"));
+		libros.add(new Libro(555,"Italia","viajes"));
 	}
 	@Override
 	public List<Libro> libros() {
@@ -29,46 +28,31 @@ public class LibrosServiceImpl implements LibrosService {
 	@Override
 	public Libro buscarLibro(int isbn) {
 		
-		for(Libro lib: libros) {
-			if(lib.getIsbn() == isbn) {
-				return lib;
-			}
-		}
-		return null;
-		
-		
-		/*
 		return libros
 				.stream()
-				.filter(l -> l.getIsbn() == isbn)
-				.findFirst();
-				*/
+				.filter(l->l.getIsbn()==isbn)
+				.findFirst()
+				.orElse(null);
 	}
 
 	@Override
 	public void altaLibro(Libro libro) {
 		libros.add(libro);
-
 	}
 
 	@Override
 	public void actualizarLibro(Libro libro) {
-		for(Libro lib: libros) {
-			if(lib.getIsbn() == libro.getIsbn()) {
-				lib.setTitulo(libro.getTitulo());
-				lib.setTematica(libro.getTematica());
-			}
+		Libro lib = buscarLibro(libro.getIsbn());
+		if (lib!=null) {
+			lib.setTematica(libro.getTematica());
+			lib.setTitulo(libro.getTitulo());
 		}
 
 	}
 
 	@Override
 	public List<Libro> eliminarLibro(int isbn) {
-		for(Libro lib: libros) {
-			if(lib.getIsbn() == isbn) {
-				libros.remove(lib);
-			}
-		}
+		libros.removeIf(l->l.getIsbn()==isbn);
 		return libros;
 	}
 

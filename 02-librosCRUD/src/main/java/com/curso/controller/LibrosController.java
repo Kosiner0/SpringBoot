@@ -18,37 +18,27 @@ import com.curso.service.LibrosService;
 @RestController
 public class LibrosController {
 
-	//localhost:8080/libros
-	
 	@Autowired
 	LibrosService service;
-	
 	@GetMapping(value="libros", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Libro> libros(){
 		return service.libros();
 	}
 	
-	@GetMapping(value="libros/{x}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public Libro buscarLibro(@PathVariable("x") int isbn) {
+	@GetMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Libro buscarLibro(@PathVariable int isbn) {
 		return service.buscarLibro(isbn);
 	}
-	
 	@PostMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void agregar(@RequestBody Libro libro) {
 		service.altaLibro(libro);
 	}
-	
 	@PutMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void actualizar(@RequestBody Libro libro) {
 		service.actualizarLibro(libro);
 	}
-	
-	@DeleteMapping(value="libros/{x}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Libro> eliminar(@PathVariable("x") int isbn){
+	@DeleteMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> eliminar(@PathVariable int isbn){		
 		return service.eliminarLibro(isbn);
 	}
-	
-	
-	
-	
 }

@@ -1,0 +1,25 @@
+RECURSO: libro
+
+Vamos a exponer un CRUD de libro
+
+GET---->recuperar
+POST--->insertar
+PUT---->actualizar
+DELETE->eliminar
+
+http://localhost:8080/libros              GET: expone todos los libros
+http://localhost:8080/libros/{isbn}       GET: recupere el libro con el isbn indicado en la url
+http://localhost:8080/libros              POST: dar de alta un libro del que paso los datos en el cuerpo en formato JSON(@RequestBody)
+http://localhost:8080/libros              PUT: actualizar un libro del que paso los datos en el cuerpo en formato JSON (@RequestBody)
+http://localhost:8080/libros/{isbn}       DELETE: borrar el libro con el isbn indicado en la url   
+
+
+ORDEN DE CREACION:
+1- Crear el proyecto y poner las dependencias necesarias
+2- Definir el modelo de datos  (com.curso.model)
+3- Capa de la lógica de negocio, capa de servicio (com.curso.service) 
+  3.1 Crear la interface
+  3.2 Crear clase que implemente esa interface (no olvidar incluir @Service)
+4- Implementar el controlador (com.curso.controller)   (no olvidar @RestController en la clase y   @Autowired LibrosService service)
+5- Configuraciones 
+   En la clase lanzadora añadir los paquetes que tienen clases con anotaciones de spring

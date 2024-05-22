@@ -1,0 +1,5 @@
+
+Comportamiento de carga de las relaciones
+Lazy feching (Carga perezosa)
+
+Eager feching(carga ansiosa)
