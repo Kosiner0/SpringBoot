@@ -9,5 +9,9 @@ public interface LibrosService {
 	 Libro buscarLibro(int isbn);
 	 void altaLibro(Libro libro);
 	 void actualizarLibro(Libro libro);
-	 List<Libro> eliminarLibro(int isbn);	 
+	 List<Libro> eliminarLibro(int isbn);
+	 //Extra
+	 List<Libro> buscarPorTematica(String tematica);
+	 List<Libro> buscarPorRangoDeIsbn(double isbnMin, double isbnMax);
+	 
 }

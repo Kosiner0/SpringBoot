@@ -20,25 +20,40 @@ public class LibrosController {
 
 	@Autowired
 	LibrosService service;
-	@GetMapping(value="libros", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Libro> libros(){
+
+	@GetMapping(value = "libros", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> libros() {
 		return service.libros();
 	}
-	
-	@GetMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
+
+	@GetMapping(value = "libros/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Libro buscarLibro(@PathVariable int isbn) {
 		return service.buscarLibro(isbn);
 	}
-	@PostMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
+
+	@PostMapping(value = "libros", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void agregar(@RequestBody Libro libro) {
 		service.altaLibro(libro);
 	}
-	@PutMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
+
+	@PutMapping(value = "libros", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void actualizar(@RequestBody Libro libro) {
 		service.actualizarLibro(libro);
 	}
-	@DeleteMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Libro> eliminar(@PathVariable int isbn){		
+
+	@DeleteMapping(value = "libros/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> eliminar(@PathVariable int isbn) {
 		return service.eliminarLibro(isbn);
 	}
+
+	@GetMapping(value = "libro/{tematica}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> buscarLibroTematica(@PathVariable String tematica) {
+		return service.buscarPorTematica(tematica);
+	}
+
+	@GetMapping(value = "libros/{min}/{max}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> buscarLibroRangoIsbn(@PathVariable("min") int minIsbn, @PathVariable("max") int maxIsbn) {
+		return service.buscarPorRangoDeIsbn(minIsbn, maxIsbn);
+	}
+
 }

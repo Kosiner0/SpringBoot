@@ -20,6 +20,7 @@ public class LibrosServiceImpl implements LibrosService {
 		libros.add(new Libro(444,"Verano en Hawai","poesia"));
 		libros.add(new Libro(555,"Italia","viajes"));
 	}
+	
 	@Override
 	public List<Libro> libros() {
 		return libros;
@@ -54,6 +55,27 @@ public class LibrosServiceImpl implements LibrosService {
 	public List<Libro> eliminarLibro(int isbn) {
 		libros.removeIf(l->l.getIsbn()==isbn);
 		return libros;
+	}
+	
+	@Override
+	public List<Libro> buscarPorTematica(String tematica) {
+		List<Libro> librosTematica = new ArrayList<>();
+		for(Libro l: libros) {
+			if(l.getTematica().equals(tematica)) {
+				librosTematica.add(l);
+			}
+		}
+		return librosTematica;
+	}
+	@Override
+	public List<Libro> buscarPorRangoDeIsbn(double isbnMin, double isbnMax) {
+		List<Libro> librosRangoIsbn = new ArrayList<>();
+		for(Libro l: libros) {
+			if(l.getIsbn() >= isbnMin && l.getIsbn() <= isbnMax) {
+				librosRangoIsbn.add(l);
+			}
+		}
+		return librosRangoIsbn;
 	}
 
 }
