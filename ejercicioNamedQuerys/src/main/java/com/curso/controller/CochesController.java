@@ -45,7 +45,7 @@ public class CochesController {
 		 return service.cochesPorMarca(marca);
 	 }
 	
-	@GetMapping(value="coches/{precioMin}/{precioMax}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="coche/{precioMin}/{precioMax}", produces=MediaType.APPLICATION_JSON_VALUE)
 	 public List<Coche> cochesPorPrecioEntre(@PathVariable("precioMin") Double precioMin, @PathVariable("precioMax") Double precioMax){
 		 return service.cochesPorPrecioEntre(precioMin, precioMax);
 	 }
