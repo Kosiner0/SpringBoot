@@ -1,6 +1,7 @@
 package com.curso.model;
 
 public class Libro {
+	
 	private int isbn;
 	private String titulo;
 	private String tematica;	
@@ -32,8 +33,6 @@ public class Libro {
 	public void setTematica(String tematica) {
 		this.tematica = tematica;
 	}
-	
-	
 	
 
 }
