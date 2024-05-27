@@ -1,0 +1,17 @@
+1-Crear proyecto y poner dependencias (Starter Spring Web) en pom.xml
+
+2-Definir el modelo, (com.curso.model)
+
+3-Trabajar con la capa de servicio
+	3.1 Crear interfaz
+	3.2 Crear clase que implemente la interfaz con un @Service
+	
+4-Implementar el controlador con el @RestController u el @Autovirde service
+
+5-Configuraciones
+	5.1 Indicar los paquetes en la application
+	5.2 Crear el bin del RestTemplate
+	5.3 Asignar un numero de puerto valido y que este libre  -->  server.port=9090
+	
+6-Probar en Postman
+	http://localhost:9090/ejemplar/isbn/titulo/tematica

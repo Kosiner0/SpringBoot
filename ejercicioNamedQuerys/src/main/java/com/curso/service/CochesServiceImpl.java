@@ -51,4 +51,29 @@ public class CochesServiceImpl implements CochesService {
 		return dao.cochesPorMarcaModelo(marca, modelo);
 	}
 
+	@Override
+	public List<Coche> cochesEntreAnios(int fechaMin, int fechaMax) {
+		return dao.cochesEntreAnios(fechaMin, fechaMax);
+	}
+
+	@Override
+	public List<Coche> cochesProfesionPropietario(String profesion) {
+		return dao.cochesProfesionPropietario(profesion);
+	}
+
+	@Override
+	public List<Coche> cochesPorPropietario(String nombrePropietario) {
+		return dao.cochesPorPropietario(nombrePropietario);
+	}
+
+	@Override
+	public List<Coche> cochesAvanzada(String marca, String modelo, Double precioMin, Double precioMax) {
+		return dao.cochesAvanzada(marca, modelo, precioMin, precioMax);
+	}
+
+	@Override
+	public List<Coche> cochesAvanzadaConPropietario(String marca, String profesion, int edadMin) {
+		return dao.cochesAvanzadaConPropietario(marca, profesion, edadMin);
+	}
+
 }

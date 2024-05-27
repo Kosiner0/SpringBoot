@@ -14,4 +14,11 @@ public interface CochesService {
 	List<Coche> cochesPorMarca(String marcaBuscar);
 	List<Coche> cochesPorPrecioEntre(Double precioMin, Double precioMax);
 	List<Coche> cochesPorMarcaModelo(String marca, String modelo);
+	
+	List<Coche> cochesEntreAnios(int fechaMin, int fechaMax);
+	List<Coche> cochesProfesionPropietario(String profesion);
+	List<Coche> cochesPorPropietario(String nombrePropietario);
+	List<Coche> cochesAvanzada(String marca, String modelo, Double precioMin, Double precioMax);
+	List<Coche> cochesAvanzadaConPropietario(String marca, String profesion, int edadMin);
+	
 }

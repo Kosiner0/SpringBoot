@@ -3,7 +3,10 @@ package com.curso.modelo;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Coche {
@@ -14,6 +17,10 @@ public class Coche {
 	private String modelo;
 	private int anio;
 	private Double precio;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="propietario_id")
+	private Propietario propietario;
 	
 	public Coche() {
 		super();
@@ -64,7 +71,15 @@ public class Coche {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public Propietario getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Propietario propietario) {
+		this.propietario = propietario;
+	}
+
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 

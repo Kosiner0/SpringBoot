@@ -25,7 +25,7 @@ public class CochesController {
 		 return service.coches();
 	 }
 	
-	@GetMapping(value="coche/{numBastidor}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="coches/porBastidor/{numBastidor}", produces=MediaType.APPLICATION_JSON_VALUE)
 	 public Coche buscarCoche(@PathVariable int numBastidor){
 		 return service.buscarCoche(numBastidor);
 	 }
@@ -40,19 +40,49 @@ public class CochesController {
 		 return service.eliminarCoche(numBastidor);
 	 }
 	
-	@GetMapping(value="coches/{marca}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="coches/marca/{marca}", produces=MediaType.APPLICATION_JSON_VALUE)
 	 public List<Coche> cochesPorMarca(@PathVariable String marca){
 		 return service.cochesPorMarca(marca);
 	 }
 	
-	@GetMapping(value="coche/{precioMin}/{precioMax}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="coches/entre/{precioMin}/{precioMax}", produces=MediaType.APPLICATION_JSON_VALUE)
 	 public List<Coche> cochesPorPrecioEntre(@PathVariable("precioMin") Double precioMin, @PathVariable("precioMax") Double precioMax){
 		 return service.cochesPorPrecioEntre(precioMin, precioMax);
 	 }
 	
-	@GetMapping(value="coches/{marca}/{modelo}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="coches/marcaModelo/{marca}/{modelo}", produces=MediaType.APPLICATION_JSON_VALUE)
 	 public List<Coche> cochesPorMarcaModelo(@PathVariable("marca") String marca, @PathVariable("modelo") String modelo){
 		 return service.cochesPorMarcaModelo(marca, modelo);
+	 }
+	
+	@GetMapping(value="coches/entre/anios/{fechaMin}/{fechaMax}", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Coche> cochesEntreAnios(@PathVariable("fechaMin") int fechaMin, @PathVariable("fechaMax") int fechaMax){
+		 return service.cochesEntreAnios(fechaMin, fechaMax);
+	 }
+	
+	@GetMapping(value="coches/profesion/propietario/{profesion}", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Coche> cochesProfesionPropietario(@PathVariable String profesion){
+		 return service.cochesProfesionPropietario(profesion);
+	 }
+	
+	@GetMapping(value="coches/propietario/{nombre}", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Coche> cochesPorPropietario(@PathVariable String nombre){
+		 return service.cochesPorPropietario(nombre);
+	 }
+	
+	@GetMapping(value="coches/avanzada/{marca}/{modelo}/{precioMin}/{precioMax}", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Coche> cochesAvanzada(@PathVariable("marca") String marca, 
+			 @PathVariable("modelo")String modelo, 
+			 @PathVariable("precioMin") Double precioMin, 
+			 @PathVariable("precioMax") Double precioMax){
+		 return service.cochesAvanzada(marca, modelo, precioMin, precioMax);
+	 }
+	
+	@GetMapping(value="coches/avanzada/propietario/{marca}/{profesion}/{edadMin}", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Coche> cochesAvanzadaConPropietario(@PathVariable("marca") String marca, 
+			 @PathVariable("profesion")String profesion, 
+			 @PathVariable("edadMin") int edadMin){
+		 return service.cochesAvanzadaConPropietario(marca, profesion, edadMin);
 	 }
 	
 }
