@@ -22,8 +22,7 @@ public class FormacionesServiceImpl implements FormacionesService {
 	
 	@Override
 	public List<Formacion> listaFormaciones() {
-        RestTemplate restTemplate = new RestTemplate();
-        DOTCurso[] cursos = restTemplate.getForObject(url, DOTCurso[].class);
+        DOTCurso[] cursos = template.getForObject(url, DOTCurso[].class);
         return mapCursosToFormaciones(cursos);
     }
 
