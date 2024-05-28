@@ -3,29 +3,36 @@ package com.curso.model;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Curso {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codCurso;
 	private String nombre;
 	private int duracion;
 	private double precio;
 	
+	
 	public Curso() {
 		super();
 	}
 
-
-	public Curso(int codCurso, String nombre, int duracion, double precio) {
+	public Curso(int codCurso) {
 		super();
 		this.codCurso = codCurso;
+	}
+
+	public Curso(String nombre, int duracion, double precio) {
 		this.nombre = nombre;
 		this.duracion = duracion;
 		this.precio = precio;
 	}
+
 
 	public int getCodCurso() {
 		return codCurso;

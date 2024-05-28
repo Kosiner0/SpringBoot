@@ -56,4 +56,9 @@ public class CursosServiceImpl implements CursosService {
 		return listaRangoPrecios;
 	}
 
+	@Override
+	public List<Curso> listaCursos() {
+		return dao.findAll();
+	}
+
 }

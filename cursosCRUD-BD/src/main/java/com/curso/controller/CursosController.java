@@ -21,7 +21,12 @@ public class CursosController {
 	@Autowired
 	CursosService service;
 	
-	@PostMapping(value="cursos", consumes=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="cursos", produces=MediaType.APPLICATION_JSON_VALUE)
+	 public List<Curso> listaCursos(){
+		 return service.listaCursos();
+	 }
+	
+	@PostMapping(value="cursos/alta", consumes=MediaType.APPLICATION_JSON_VALUE)
 	 public List<Curso> altaCurso(@RequestBody Curso curso){
 		 return service.altaCurso(curso);
 	 }
